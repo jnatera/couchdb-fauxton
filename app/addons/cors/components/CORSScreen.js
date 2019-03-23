@@ -22,7 +22,7 @@ export default class CORSScreen extends Component {
   enableCorsChange() {
     const { corsEnabled, origins, node } = this.props;
     if (corsEnabled && !_.isEmpty(origins)) {
-      const result = window.confirm(app.i18n.en_US['cors-disable-cors-prompt']);
+      const result = window.confirm(app.i18n.lng['cors-disable-cors-prompt']);
       if (!result) { return; }
     }
     this.props.saveCORS({
@@ -117,7 +117,7 @@ export default class CORSScreen extends Component {
     return (
       <div className="cors-page flex-body">
         <header id="cors-header">
-          <p>{app.i18n.en_US['cors-notice']}</p>
+          <p>{app.i18n.lng['cors-notice']}</p>
         </header>
 
         <form id="corsForm" onSubmit={this.save.bind(this)}>

@@ -43,7 +43,7 @@ export const validatePasswords = (password, passwordConfirm) => {
 
 export const login = (username, password, urlBack) => {
   if (!validateUser(username, password)) {
-    return errorHandler({message: app.i18n.en_US['auth-missing-credentials']});
+    return errorHandler({message: app.i18n.lng['auth-missing-credentials']});
   }
 
   return Api.login({name: username, password})
@@ -53,7 +53,7 @@ export const login = (username, password, urlBack) => {
         return resp;
       }
 
-      let msg = app.i18n.en_US['auth-logged-in'];
+      let msg = app.i18n.lng['auth-logged-in'];
       if (msg) {
         FauxtonAPI.addNotification({msg});
       }
@@ -68,7 +68,7 @@ export const login = (username, password, urlBack) => {
 
 export const changePassword = (username, password, passwordConfirm, nodes) => () => {
   if (!validatePasswords(password, passwordConfirm)) {
-    return errorHandler({message: app.i18n.en_US['auth-passwords-not-matching']});
+    return errorHandler({message: app.i18n.lng['auth-passwords-not-matching']});
   }
   //To change an admin's password is the same as creating an admin. So we just use the
   //same api function call here.
@@ -79,7 +79,7 @@ export const changePassword = (username, password, passwordConfirm, nodes) => ()
   }).then(
     () => {
       FauxtonAPI.addNotification({
-        msg: app.i18n.en_US["auth-change-password"]
+        msg: app.i18n.lng["auth-change-password"]
       });
     },
     errorHandler
@@ -89,17 +89,17 @@ export const changePassword = (username, password, passwordConfirm, nodes) => ()
 export const createAdmin = (username, password, loginAfter, nodes) => () => {
   const node = nodes[0].node;
   if (!validateUser(username, password)) {
-    return errorHandler({message: app.i18n.en_US['auth-missing-credentials']});
+    return errorHandler({message: app.i18n.lng['auth-missing-credentials']});
   }
 
   Api.createAdmin({name: username, password, node})
     .then(resp => {
       if (resp.error) {
-        return errorHandler({message: `${app.i18n.en_US['auth-admin-creation-failed-prefix']} ${resp.reason}`});
+        return errorHandler({message: `${app.i18n.lng['auth-admin-creation-failed-prefix']} ${resp.reason}`});
       }
 
       FauxtonAPI.addNotification({
-        msg: app.i18n.en_US['auth-admin-created']
+        msg: app.i18n.lng['auth-admin-created']
       });
 
       if (loginAfter) {

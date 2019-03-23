@@ -13,6 +13,7 @@
 import PropTypes from 'prop-types';
 
 import React from 'react';
+import app from "../../../../../app";
 import FauxtonAPI from '../../../../../core/api';
 import GeneralComponents from '../../../../components/react-components';
 import Constants from '../../../constants';
@@ -157,7 +158,7 @@ export default class QueryOptions extends React.Component {
             <ToggleHeaderButton
               toggleCallback={this.toggleTrayVisibility.bind(this)}
               containerClasses="header-control-box control-toggle-queryoptions"
-              title="Query Options"
+              title={app.i18n.lng['query-options']}
               fonticon="fonticon-gears"
               text="Options"
               active={this.showAsActive()} />

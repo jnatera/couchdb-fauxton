@@ -46,7 +46,7 @@ export class ReplicationAuth extends React.Component {
   }
 
   getAuthOptions = () => {
-    const userPasswordLabel = app.i18n.en_US['replication-user-password-auth-label'];
+    const userPasswordLabel = app.i18n.lng['replication-user-password-auth-label'];
     const authOptions = [
       { value: Constants.REPLICATION_AUTH_METHOD.NO_AUTH, label: 'None' },
       { value: Constants.REPLICATION_AUTH_METHOD.BASIC, label: userPasswordLabel }
@@ -157,8 +157,8 @@ export class UserPasswordAuthInput extends React.Component {
   }
 
   render () {
-    const usernamePlaceholder = app.i18n.en_US['replication-username-input-placeholder'];
-    const passwordPlaceholder = app.i18n.en_US['replication-password-input-placeholder'];
+    const usernamePlaceholder = app.i18n.lng['replication-username-input-placeholder'];
+    const passwordPlaceholder = app.i18n.lng['replication-password-input-placeholder'];
     const { authId } = this.props;
     return (
       <React.Fragment>

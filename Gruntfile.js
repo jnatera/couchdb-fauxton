@@ -57,17 +57,51 @@ module.exports = function (grunt) {
     return _.union(["dist/", "app/load_addons.js"], cleanableAddons);
   }();
 
+  /*
+  * Recursively merge properties of two objects 
+  */
+ var MRecursive = (function MergeRecursive(obj1, obj2) {
+  
+    for (var p in obj2) {
+      try {
+        // Property in destination object set; update its value.
+        if ( obj2[p].constructor==Object ) {
+          obj1[p] = MergeRecursive(obj1[p], obj2[p]);
+  
+        } else {
+          obj1[p] = obj2[p];
+  
+        }
+  
+      } catch(e) {
+        // Property in destination object not set; create it and set its value.
+        obj1[p] = obj2[p];
+  
+      }
+    }
+  
+    return obj1;
+  });
+
+  
   var templateSettings = (function getTemplateSettings () {
     var settings = initHelper.readSettingsFile();
 
-    var i18n = JSON.stringify(initHelper.readI18nFile(), null, ' ');
+    var i18n = initHelper.readI18nFile();//JSON.stringify(, null, ' ');
 
     Object.keys(settings.template).forEach(function (key) {
       settings.template[key].variables.generationDate = new Date().toISOString();
       if (!settings.template[key].variables.generationLabel) {
         settings.template[key].variables.generationLabel = 'Generated: ';
       }
-      settings.template[key].app.i18n = i18n;
+      var lng=i18n['en_US'];//Languaje Default
+      if (settings.template[key].app.i18n){//If exist variable
+        if (settings.template[key].app.i18n!='es_US'){//if it is diferent es_ES
+          lng=MRecursive(lng,i18n[settings.template[key].app.i18n]) ;
+        }
+      }
+      i18n.lng=lng;
+      settings.template[key].app.i18n = JSON.stringify(i18n, null, ' ');
     });
 
     return settings.template;

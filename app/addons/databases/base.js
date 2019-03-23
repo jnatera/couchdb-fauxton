@@ -22,7 +22,7 @@ import "./assets/less/databases.less";
 Databases.initialize = function () {
   FauxtonAPI.addHeaderLink({
     href:"#/_all_dbs",
-    title:"Databases",
+    title:app.i18n.lng['databases'],
     icon: "fonticon-database",
     className: 'databases'
   });

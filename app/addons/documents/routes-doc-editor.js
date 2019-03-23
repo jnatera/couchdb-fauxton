@@ -23,7 +23,7 @@ import {DocEditorLayout} from '../components/layouts';
 
 
 const DocEditorRouteObject = FauxtonAPI.RouteObject.extend({
-  selectedHeader: 'Databases',
+  selectedHeader: app.i18n.lng['databases'],
 
   roles: ['fx_loggedIn'],
 

@@ -17,7 +17,7 @@ import {mount} from 'enzyme';
 describe('Navigation Bar', () => {
   const dbLink = {
     href: "#/_all_dbs",
-    title: "Databases",
+    title: "Base de datos",
     icon: "fonticon-database",
     className: 'databases'
   };

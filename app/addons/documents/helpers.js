@@ -60,7 +60,7 @@ const getMangoLink = (databaseName, partitionKey) => {
     (partitionKey ? '/_partition/' + encodeURIComponent(partitionKey) : '');
 
   return {
-    title: app.i18n.en_US['new-mango-index'],
+    title: app.i18n.lng['new-mango-index'],
     url: newUrlPrefix + '/_index',
     icon: 'fonticon-plus-circled'
   };

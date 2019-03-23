@@ -28,7 +28,8 @@
         "app": {
           "root": "/",
           "host": "./",
-          "version": "1.0.dev"
+          "version": "1.0.dev",
+          "i18n":"en_US"
         }
       },
       "release": {
@@ -43,7 +44,8 @@
         "app": {
           "root": "/",
           "host": "../",
-          "version": "1.0"
+          "version": "1.0",
+          "i18n":"en_US"
         }
       },
       "couchapp": {

@@ -32,7 +32,7 @@ export default class ClusterConfiguredScreen extends React.Component {
 
     return (
       <div className="setup-screen">
-        {app.i18n.en_US['couchdb-productname']} is configured for production usage as a {nodetype} node!
+        {app.i18n.lng['couchdb-productname']} is configured for production usage as a {nodetype} node!
         <br/>
         <br/>
           Do you want to <a href="#replication">replicate data</a>?

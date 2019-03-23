@@ -108,14 +108,14 @@ MangoHeader.defaultProps = {
 export const MangoContent = ({ edit, designDocs, explainPlan, databaseName, fetchUrl, queryDocs, docType, partitionKey }) => {
   const leftContent = edit ?
     <MangoComponents.MangoIndexEditorContainer
-      description={app.i18n.en_US['mango-descripton-index-editor']}
+      description={app.i18n.lng['mango-descripton-index-editor']}
       databaseName={databaseName}
       partitionKey={partitionKey}
     /> :
     <MangoComponents.MangoQueryEditorContainer
-      description={app.i18n.en_US['mango-descripton']}
-      editorTitle={app.i18n.en_US['mango-title-editor']}
-      additionalIndexesText={app.i18n.en_US['mango-additional-indexes-heading']}
+      description={app.i18n.lng['mango-descripton']}
+      editorTitle={app.i18n.lng['mango-title-editor']}
+      additionalIndexesText={app.i18n.lng['mango-additional-indexes-heading']}
       databaseName={databaseName}
       partitionKey={partitionKey}
     />;

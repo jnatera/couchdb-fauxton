@@ -32,7 +32,7 @@ export default class FirstStepController extends React.Component {
 
     return (
       <div className="setup-screen">
-        <h2>Welcome to {app.i18n.en_US['couchdb-productname']}!</h2>
+        <h2>Welcome to {app.i18n.lng['couchdb-productname']}!</h2>
         <p>
             This wizard should be run directly on the node, rather than through a load-balancer.
         </p>

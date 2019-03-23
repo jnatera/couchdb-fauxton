@@ -53,7 +53,7 @@ export default class MainSidebar extends React.Component {
     const permissionsUrl = '#' + FauxtonAPI.urls('permissions', 'app', dbEncoded, partKeyEncoded);
     const databaseUrl = FauxtonAPI.urls('allDocs', 'app', dbEncoded, partKeyEncoded, '');
     const mangoQueryUrl = FauxtonAPI.urls('mango', 'query-app', dbEncoded, partKeyEncoded);
-    const runQueryWithMangoText = app.i18n.en_US['run-query-with-mango'];
+    const runQueryWithMangoText = app.i18n.lng['run-query-with-mango'];
     const buttonLinks = this.getNewButtonLinks();
 
     return (
@@ -62,7 +62,7 @@ export default class MainSidebar extends React.Component {
           <a id="all-docs"
             href={"#/" + databaseUrl}
             className="toggle-view">
-            All Documents
+            {app.i18n.lng['all-documents']}
           </a>
           <div id="new-all-docs-button" className="add-dropdown">
             <MenuDropDown links={buttonLinks} />
@@ -77,10 +77,10 @@ export default class MainSidebar extends React.Component {
           </a>
         </li>
         <li className={this.getNavItemClass('permissions')}>
-          <a id="permissions" href={permissionsUrl}>Permissions</a>
+          <a id="permissions" href={permissionsUrl}>{app.i18n.lng['permissions']}</a>
         </li>
         <li className={this.getNavItemClass('changes')}>
-          <a id="changes" href={changesUrl}>Changes</a>
+          <a id="changes" href={changesUrl}>{app.i18n.lng['changes']}</a>
         </li>
         {docLinks}
         <li className={this.getNavItemClass('design-docs')}>

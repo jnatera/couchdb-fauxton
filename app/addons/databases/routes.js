@@ -29,7 +29,7 @@ const AllDbsRouteObject = FauxtonAPI.RouteObject.extend({
 
   roles: ['fx_loggedIn'],
 
-  selectedHeader: "Databases",
+  selectedHeader: app.i18n.lng['databases'],
 
   allDatabases: function (_, params) {
     const {page, limit} = this.createParams(params);

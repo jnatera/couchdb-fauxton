@@ -40,7 +40,7 @@ const SetupRouteObject = FauxtonAPI.RouteObject.extend({
       endpoint={url}
       docURL={FauxtonAPI.constants.DOC_URLS.SETUP}
       crumbs={[
-        {'name': 'Setup ' + app.i18n.en_US['couchdb-productname']}
+        {'name': 'Setup ' + app.i18n.lng['couchdb-productname']}
       ]}
     />;
   },
@@ -53,7 +53,7 @@ const SetupRouteObject = FauxtonAPI.RouteObject.extend({
       endpoint={url}
       docURL={FauxtonAPI.constants.DOC_URLS.SETUP}
       crumbs={[
-        {'name': 'Setup ' + app.i18n.en_US['couchdb-productname']}
+        {'name': 'Setup ' + app.i18n.lng['couchdb-productname']}
       ]}
     />;
   },
@@ -66,7 +66,7 @@ const SetupRouteObject = FauxtonAPI.RouteObject.extend({
       endpoint={url}
       docURL={FauxtonAPI.constants.DOC_URLS.SETUP}
       crumbs={[
-        {'name': 'Setup ' + app.i18n.en_US['couchdb-productname']}
+        {'name': 'Setup ' + app.i18n.lng['couchdb-productname']}
       ]}
     />;
   },
@@ -78,7 +78,7 @@ const SetupRouteObject = FauxtonAPI.RouteObject.extend({
       endpoint={url}
       docURL={FauxtonAPI.constants.DOC_URLS.SETUP}
       crumbs={[
-        {'name': 'Setup ' + app.i18n.en_US['couchdb-productname']}
+        {'name': 'Setup ' + app.i18n.lng['couchdb-productname']}
       ]}
     />;
   }
